@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles.css" rel="stylesheet" />
+    <!-- Include Tailwind CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white rounded-lg shadow-md p-8 max-w-md w-full space-y-4">
+      <div class="flex justify-center">
+        <img
+          class="w-20 h-20 object-cover rounded-full border-2 border-indigo-500"
+          alt="Profile"
+          src="https://i.pinimg.com/originals/9b/95/ab/9b95ab89b42b035c63770e2161df0a4c.gif"
+        />
+      </div>
+      <div class="text-center space-y-2">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+          <span class="text-indigo-500">Assignment 3</span>
+        </h3>
+        <p class="text-gray-500 font-bold text-lg">
+          <span class="text-indigo-500">Covid 19 - Tracker</span>
+        </p>
+      </div>
+      <div
+        class="relative text-gray-600 focus-within:text-gray-400 justify-center text-center"
+      >
+        <input
+          type="text"
+          id="countryInput"
+          class="py-2 text-sm text-white bg-light-500 rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"
+          placeholder="Enter Country Name..."
+          autocomplete="off"
+          onkeydown="if (event.keyCode == 13) searchCovidData();"
+        />
+        <div
+          class="absolute inset-y-0 left-0 flex items-center pl-2 bg-gray-100"
+        >
+          <button
+            type="submit"
+            onclick="searchCovidData()"
+            class="p-1 focus:outline-none focus:shadow-outline"
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              class="w-6 h-6"
+            >
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="border-2 rounded p-4">
+          Active Cases: <span id="activeCases"></span>
+        </div>
+        <div class="border-2 rounded p-4">
+          New Cases: <span id="newCases"></span>
+        </div>
+        <div class="border-2 rounded p-4">
+          Recovered Cases: <span id="recoveredCases"></span>
+        </div>
+        <div class="border-2 rounded p-4">
+          Total Cases: <span id="totalCases"></span>
+        </div>
+        <div class="border-2 rounded p-4">
+          Total Deaths: <span id="totalDeaths"></span>
+        </div>
+        <div class="border-2 rounded p-4">
+          Total Tests: <span id="totalTests"></span>
+        </div>
+      </div>
+    </div>
+    <script src="covid.js"></script>
+  </body>
+</html>
